@@ -22,24 +22,30 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
+          
+      # Passo 3: Limpar o cache do pip
+      - name: Clear pip cache
+        run: |
+          rm -rf ~/.cache/pip
 
-      # Passo 3: Instalar as dependências
+      # Passo 4: Instalar as dependências
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install --upgrade flake8
 
-      # Passo 4: Rodar os testes com unittest
+      # Passo 5: Rodar os testes com unittest
       - name: Run tests with unittest
         run: |
           python -m unittest discover -s tests
 
-      # Passo 5: Linting com flake8
+      # Passo 6: Linting com flake8
       - name: Lint code with flake8
         run: |
           flake8 src/ tests/
 
-      # Passo 6: Formatação automática com autopep8
+      # Passo 7: Formatação automática com autopep8
       - name: Format code with autopep8
         run: |
-          autopep8 --in-place --aggressive --aggressive src/ tests/
+          autopep8 --in-place --aggressive --aggressive src/*.py tests/*.py

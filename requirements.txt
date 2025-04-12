@@ -5,5 +5,5 @@ pip
 flask
 
 # Ferramentas para linting e formatação de código
-flake8==4.0.1             # verificar erros de estilo
-autopep8==1.6.0           # formatador automático
+flake8==4.0.1
+autopep8==1.6.0

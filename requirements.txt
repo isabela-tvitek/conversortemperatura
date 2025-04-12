@@ -1,12 +1,8 @@
 # Dev environment
 pip
-autopep8
 
 # App
 flask
-
-# Ferramentas para testes
-pytest==7.1.2
 
 # Ferramentas para linting e formatação de código
 flake8==4.0.1             # verificar erros de estilo

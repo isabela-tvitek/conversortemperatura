@@ -1,0 +1,45 @@
+name: Python
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Passo 1: Checkout do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Passo 2: Configuração do ambiente Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      # Passo 3: Instalar as dependências
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Passo 4: Rodar os testes com unittest
+      - name: Run tests with unittest
+        run: |
+          python -m unittest discover -s tests
+
+      # Passo 5: Linting com flake8
+      - name: Lint code with flake8
+        run: |
+          flake8 src/ tests/
+
+      # Passo 6: Formatação automática com autopep8
+      - name: Format code with autopep8
+        run: |
+          autopep8 --in-place --aggressive --aggressive src/ tests/

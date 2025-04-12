@@ -48,6 +48,41 @@ O projeto utiliza o framework **`unittest`** para rodar os testes unitários do 
    black src/ tests/
    ```
 
+## Executar a Aplicação 
+
+   Para rodar a aplicação Flask localmente, execute o seguinte comando no terminal
+
+   ```bash
+   python app.py
+   ```
+
+### Para converter Celsius para Fahrenheit
+
+http://127.0.0.1:5000/celsius-to-fahrenheit?celsius=25
+
+### Para converter Fahrenheit para Celsius
+
+http://127.0.0.1:5000/fahrenheit-to-celsius?fahrenheit=77
+
+
+### Para converter Celsius para Kelvin
+
+http://127.0.0.1:5000/celsius-to-kelvin?celsius=25
+
+### Para converter Kelvin para Celsius
+
+http://127.0.0.1:5000/kelvin-to-celsius?kelvin=298.15
+
+
+### Para converter Fahrenheit para Kelvin
+
+http://127.0.0.1:5000/fahrenheit-to-kelvin?fahrenheit=77
+
+### Para converter Kelvin para Fahrenheit
+
+http://127.0.0.1:5000/kelvin-to-fahrenheit?kelvin=298.15
+
+
 ## CI
 A configuração do CI foi feita utilizando GitHub Actions
 

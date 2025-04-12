@@ -45,7 +45,7 @@ jobs:
         run: |
           flake8 src/ tests/
 
-      # Passo 7: Formatação automática com autopep8
-      - name: Format code with autopep8
+      # Passo 7: Formatação automática com black
+      - name: Format code with black
         run: |
-          autopep8 --in-place --aggressive --aggressive src/*.py tests/*.py
+          black src/ tests/

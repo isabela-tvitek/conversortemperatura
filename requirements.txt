@@ -6,4 +6,4 @@ flask
 
 # Ferramentas para linting e formatação de código
 flake8==4.0.1
-autopep8==1.6.0
+black==22.10.0
